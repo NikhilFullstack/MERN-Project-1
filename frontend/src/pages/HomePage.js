@@ -62,7 +62,7 @@ const HomePage = () => {
             <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
               This is a list of all employees. You can add new employees, edit
               or delete existing ones.
-              {`${process.env.REACT_APP_BASE_URL}/getallUsers`}
+              
             </p>
           </div>
           <Link to={"/addemployee"}>
