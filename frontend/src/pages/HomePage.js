@@ -9,7 +9,7 @@ const HomePage = () => {
   const getAllData = async () => {
     try {
       const getPeople = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/getallUsers`,
+        `https://nikhilfullstack.onrender.com/api/v1/getallUsers`,
         {
           method: "GET",
           headers: {
