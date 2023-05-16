@@ -62,7 +62,7 @@ const HomePage = () => {
             <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
               This is a list of all employees. You can add new employees, edit
               or delete existing ones.
-              {`${process.env.REACT_APP_BASE_URL}/getallUsers`}
+              
             </p>
           </div>
           <Link to={"/addemployee"}>
@@ -103,6 +103,7 @@ const HomePage = () => {
                   </thead>
 
                   <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                    {console.log(empData)}
                     {empData?.data.map((person) => (
                       <tr key={person.name}>
                         <td className="py-4 px-4 whitespace-nowrap">
