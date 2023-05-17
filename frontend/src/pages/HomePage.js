@@ -9,7 +9,7 @@ const HomePage = () => {
   const getAllData = async () => {
     try {
       const getPeople = await fetch(
-        `process.env.WEBURL/api/v1/getallUsers`,
+       `${process.env.WEBURL}/api/v1/getallUsers`,
         {
           method: "GET",
           headers: {
