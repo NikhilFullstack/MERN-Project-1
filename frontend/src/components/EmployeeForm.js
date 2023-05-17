@@ -10,7 +10,7 @@ const EmployeeForm = () => {
   const createEmployee = async (data) => {
 
     const savedUserResponse = await fetch(
-      `https://nikhilfullstack.onrender.com/createUser`,
+      `process.env.WEBURL/createUser`,
       {
         method: "POST",
         headers: {
