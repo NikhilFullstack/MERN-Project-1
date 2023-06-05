@@ -2,25 +2,20 @@ const User = require("../models/User");
 
 exports.updateUser = async (req,res)=>{
     try{
-        const { name, email, title, department, role } = req.body;
-        //validate
-        //check if secretkey exist
+        console.log(req.body);
+        console.log(req.params);
 
         try{
-            const checkKey=User.find({id:req.params.id});
-            await User.updateOne({id:checkKey._id},{
-                name:name,
-                email:email,
-                title:title,
-                department:department,
-                role:role,
-            })
+            await User.findByIdAndUpdate(req.params.id, req.body, {
+                new: true,
+              });
+            
         }
         catch(err){
             console.log(err.message);
             return res.status(400).json({
                 success:false,
-                message:"Secret Key doesn't exist",
+                message:err.message,
             })
         }
         
