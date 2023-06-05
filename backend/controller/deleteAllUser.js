@@ -21,7 +21,7 @@ exports.deleteUser = async (req,res)=>{
 	try{
 		const user = User.findById({id : req.params.id});
 		console.log(user);
-		await User.deleteMany({id:user._id});
+		await User.deleteOne({id:user._id});
 		return res.status(200).json({
 			success:true,
 			message:"User successfully deleted",
